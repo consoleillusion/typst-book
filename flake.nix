@@ -27,7 +27,7 @@
           };
         };
 
-        packages.${system} = {
+        packages = {
           init = pkgs.writeShellApplication {
             name = "init";
             runtimeInputs = [pkgs.typst];

@@ -19,7 +19,7 @@
           text_dir = "text";
           image_dir = "image";
       in {
-        devShells.${system} = {
+        devShells = {
           default = pkgs.mkShell {
             packages = with pkgs; [ typst jaq ];
             shellHook = ''
@@ -65,7 +65,7 @@
                 '
             '';
           };
-          font-add= pkgs.writeShellApplication {
+          font-add = pkgs.writeShellApplication {
             name = "font-add";
             runtimeInputs = [pkgs.typst];
             text = ''

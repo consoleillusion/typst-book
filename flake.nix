@@ -1,6 +1,6 @@
 {
 
-  description = "typst2book";
+  description = "typst-book";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";

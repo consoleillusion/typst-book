@@ -11,6 +11,6 @@
 #set align(top)
 #set quote(block: true)
 
-#outline()
-
 = Ebook
+
+#outline()

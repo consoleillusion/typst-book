@@ -9,8 +9,8 @@
 
   outputs = { self, nixpkgs, flake-utils, ...}:
     flake-utils.lib.eachDefaultSystem (system:
-      let system = "x86_64-linux";
-          pkgs = import nixpkgs { inherit system; };
+      let pkgs = import nixpkgs { inherit system; };
+#system = "x86_64-linux";
           base_font_url = "https://cdn.jsdelivr.net/fontsource/fonts/";
           font_suffix_url = "@latest/latin-400-normal.ttf";
           search_url = "https://api.fontsource.org/fontlist?family";

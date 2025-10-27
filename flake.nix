@@ -38,6 +38,7 @@
               mkdir -p "$book_dir"/{${font_dir},${text_dir},${image_dir}}
               rsync -a --ignore-existing ${template_dir}/ "$book_dir"
               chmod -R 755 "$book_dir"
+              ${self.packages.${system}.compile}/bin/compile "$book_dir"/text/main.typ "$book_dir"/main.pdf
             '';
           };
 
@@ -86,7 +87,9 @@
             name = "compile";
             runtimeInputs = [pkgs.typst];
             text = ''
-              typst compile --root . --font-path . text/main.typ main.pdf
+              book_input=${"$"}{1:-text/main.typ}
+              book_output=${"$"}{2:-main.pdf}
+              typst compile --root . --font-path . "$book_input" "$book_output"
             '';
           };
       };

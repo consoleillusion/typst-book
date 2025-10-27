@@ -37,7 +37,7 @@
               book_dir=${"$"}{1:-${book_dir_default}}
               mkdir -p "$book_dir"/{${font_dir},${text_dir},${image_dir}}
               rsync -a --ignore-existing ${template_dir}/ "$book_dir"
-              chmod -R 755 $book_dir
+              chmod -R 755 "$book_dir"
             '';
           };
 

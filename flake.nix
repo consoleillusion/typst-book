@@ -14,11 +14,11 @@
           base_font_url = "https://cdn.jsdelivr.net/fontsource/fonts/";
           font_suffix_url = "@latest/latin-400-normal.ttf";
           search_url = "https://api.fontsource.org/fontlist?family";
-          template_dir = "template";
+          book_dir_default = "new_book_3483856834";
+          template_dir = ./template;
           font_dir = "font";
           text_dir = "text";
           image_dir = "image";
-          book_dir_default = "new_book_3483856834";
       in {
         devShells = {
           default = pkgs.mkShell {

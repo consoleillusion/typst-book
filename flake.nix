@@ -21,7 +21,7 @@
       in {
         devShells.${system} = {
           default = pkgs.mkShell {
-            packages = [ pkgs.typst pkgs.jaq ];
+            packages = with pkgs; [ typst jaq ];
             shellHook = ''
             '';
           };

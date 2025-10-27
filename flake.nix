@@ -18,6 +18,7 @@
           font_dir = "font";
           text_dir = "text";
           image_dir = "image";
+          book_dir_default = "new_book_3483856834";
       in {
         devShells = {
           default = pkgs.mkShell {
@@ -33,8 +34,9 @@
             runtimeInputs = [pkgs.typst];
             text = ''
               echo init
-              mkdir -p ${font_dir} ${text_dir} ${image_dir}
-              rsync -a --ignore-existing ${template_dir}/ .
+              book_dir=${"$"}{1:-${book_dir_default}}
+              mkdir -p "$book_dir"/{${font_dir},${text_dir},${image_dir}}
+              rsync -a --ignore-existing ${template_dir}/ "$book_dir"
             '';
           };
 
@@ -83,7 +85,7 @@
             name = "compile";
             runtimeInputs = [pkgs.typst];
             text = ''
-              typst compile --root . --font-path . text/main.typ
+              typst compile --root . --font-path . text/main.typ main.pdf
             '';
           };
       };

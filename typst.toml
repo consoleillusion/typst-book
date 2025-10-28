@@ -1,7 +1,7 @@
 [package]
-name = "example"
-version = "0.1.0"
+name = "book"
+version = "0.0.1"
 entrypoint = "lib.typ"
-authors = ["The Typst Project Developers"]
+authors = ["Technical Book"]
 license = "MIT"
-description = "Calculate elementary arithemtics with functions."
+description = "Technical Book"

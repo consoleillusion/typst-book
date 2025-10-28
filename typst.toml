@@ -2,6 +2,14 @@
 name = "book"
 version = "0.0.1"
 entrypoint = "lib.typ"
-authors = ["Technical Book"]
+authors = ["consoleillusion <consoleillusion@proton.me>"]
 license = "MIT"
 description = "Technical Book"
+categories = [""]
+keywords = [""]
+repository = "https://github.com/consoleillusion/typst-book"
+
+[template]
+path = "template"
+entrypoint = "main.typ"
+thumbnail = "thumbnail.png"
